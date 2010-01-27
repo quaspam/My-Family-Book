@@ -1,0 +1,8 @@
+<?php
+	$cost = number_format($this->call->COST,2);
+	echo "<tr id='{$this->call->ID}'>
+			<td class='r-border'>{$this->call->NUM}</td>
+			<td class='r-border'>{$this->call->DUR}</td>
+			<td class='r-border'>{$this->call->DT}</td>
+			<td class='no-r-border'>R $cost</td>
+		</tr>";

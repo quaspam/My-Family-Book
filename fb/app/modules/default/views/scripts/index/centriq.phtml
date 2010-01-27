@@ -1,0 +1,69 @@
+<form method='POST'>
+	<table cellspacing='0' cellpadding='3' style='margin-left: 3px; margin-bottom: 15px; width: 400px; border: 1px solid rgb(176,190,199);'>
+	<tr>
+		<td colspan=2 class='q-caps q-bold q-color-bg'> ADDING A NEW CENTRIQ PRODUCT </td>
+	</tr>
+	<tr>
+		<td style='width: 150px;'>Product Name</td>
+		<td><input type='text' name='name' style='width: 240px;'/></td>
+	</tr>
+	<tr>
+		<td style='width: 150px;'>Product Price</td>
+		<td><input type='text' name='price' /></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><input type='submit' value='Add Product' /></td>
+	</tr>
+	</table>
+</form>
+
+<table id='centriq-list-tbl' cellspacing='0' style='margin-left: 3px; margin-right: 10px; float: left; border: 1px solid rgb(176,190,199);'>
+	<tr class='q-color-bg'>
+		<th>Product ID</th>
+		<th>Product Name</th>
+		<th>Product Amount</th>
+	</tr>
+	<?php
+		foreach ($this->pdts as $pdt){
+			echo $this->partial("partials/centriq-pdt-list.phtml", array('pdt'=>$pdt));
+		}
+	?>
+</table>
+
+<table id='centriq-pdt-edit-tbl' style='width: 400px;' class='q-border'>
+	<tr><th colspan='2' class='q-color-bg q-bold q-caps'>Edit Centriq Product Details</th></tr>
+	<tr>
+		<td style='width:130px'>Product Name</td><td id='cen-pdt-name'></td>
+	</tr>
+	<tr>
+		<td style='width:130px'>Includes Family</td><td><input type='checkbox' id='is-family' /></td>
+	</tr>
+	<tr>
+		<td style='width:130px'>Upto 65 Dep Cnt:</td><td><input type='text' id='upto-60-cnt' /></td>
+	</tr>
+	<tr>
+		<td style='width:130px'>Over 65 Dep Cnt:</td><td><input type='text' id='over-60-cnt' /></td>
+	</tr>
+	<tr>
+		<td style='width:130px'>Pdt Message</td>
+		<td>
+			<textarea id='pdt-msg' style='width: 300px; height: 120px;'></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td><input type='submit' value='Update Details'/></td>
+	</tr>
+</table>
+<script>
+	$(function(){
+		$('#centriq-list-tbl th').addClass('q-bold q-caps');
+		$('#centriq-list-tbl th:first').css({width: 100});
+		$('#centriq-list-tbl th:nth-child(2)').css({width: 250});
+		$('#centriq-list-tbl th:last').css({width: 120});
+
+		$('#centriq-list-tbl tr[id]').css({cursor: 'pointer'})
+		.removeClass('q-color-bg')
+		.filter(':even').addClass('q-color-bg');
+	});
+</script>

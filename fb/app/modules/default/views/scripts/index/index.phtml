@@ -1,0 +1,8 @@
+<?php
+$student = array('Arthur'=>'Mlauzi', 'Ruvarashe'=>'Mlauzi', 'Nyashadzashe'=>'Mlauzi','Nerdy'=>'Huruva');
+echo '<table id="student-list"><thead><tr><th>NAME</th><th>SURNAME</th></tr></thead><tbody>';
+foreach ($student as $name => $sname){
+	echo $this->partial('student.phtml', array('name' => $name, 'sname' => $sname));
+}
+echo '</tbody></table>';
+

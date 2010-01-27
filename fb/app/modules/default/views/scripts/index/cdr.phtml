@@ -1,0 +1,19 @@
+<table id='tbl-cdr' cellspacing='0' cellpadding='3'>
+<thead>
+	<tr>
+		<th class='b-border'>DESTINATION</th>
+		<th class='b-border'>DURATION</th>
+		<th class='b-border'>CALL DATE</th>
+		<th class='b-border'>COST</th>
+	</tr>
+</thead>
+<tbody>
+<?php
+	foreach ($this->calls as $call){
+		echo $this->partial("partials/cdr_partial.phtml",array(
+			'call'	=> $call
+		));
+	}
+?>
+</tbody>
+</table>

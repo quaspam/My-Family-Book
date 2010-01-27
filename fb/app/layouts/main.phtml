@@ -1,0 +1,31 @@
+<?php
+
+$this->doctype('XHTML1_STRICT');
+$this->headLink()->appendStylesheet('/js/resources/css/ext-all.css');
+$this->headLink()->appendStylesheet('/css/fb-general.css');
+
+
+$this->headScript()->appendFile('/js/jquery-1.3.2.min.js');
+$this->headScript()->appendFile('/js/adapter/jquery/ext-jquery-adapter.js');
+$this->headScript()->appendFile('/js/ext-all.js');
+$this->headScript()->appendFile('/js/Q-test.js');
+
+echo $this->doctype();
+?>
+<html>
+<head>
+<?php
+	echo $this->headLink(), $this->headScript();
+?>
+</head>
+<body>
+<div id='wrapper'>
+	<div id='page-header'>
+		<div id='sys-menu'>THIS IS THE SYSTEM MENU PANEL</div>
+	</div>
+	<div id='page-body' class='t100'>
+		<?php echo $this->layout()->content ?>
+	</div>
+</div>
+</body>
+</html>

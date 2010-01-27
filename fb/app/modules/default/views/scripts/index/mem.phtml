@@ -1,0 +1,15 @@
+<table cellspacing='0' class='t100' id='tbl-centriq'>
+<tr>
+	<td id='fun-popup-scr'>&nbsp;</td>
+	<td id='fun-pdt-details'>
+		<table class='t100'>
+			<?php
+				echo $this->partial('partials/centriq-member.phtml',array('mem'=>$this->mem));
+				echo $this->partial('partials/centriq-pdt.phtml');
+				echo $this->partial('partials/centriq-dependants.phtml');
+			?>
+
+		</table>
+	</td>
+</tr>
+</table>
